@@ -1,0 +1,16 @@
+Coloca aquí las 12 fotografías de Lupita con estos nombres exactos:
+
+  foto1.jpg
+  foto2.jpg
+  foto3.jpg
+  ...
+  foto12.jpg
+
+Consejos:
+- Se ven mejor en formato vertical (retrato), proporción cercana a 4:5.
+- Si una foto falta, la página mostrará un marco elegante con un corazón
+  en su lugar, así que puedes ir agregándolas poco a poco.
+- Puedes usar .jpg (si prefieres .png, cambia la extensión en script.js).
+
+Para editar las leyendas de cada foto, abre script.js y modifica la lista
+CAPTIONS que está al inicio del archivo.

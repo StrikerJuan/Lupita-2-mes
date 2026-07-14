@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Para Lupita — Nuestro segundo mes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Pétalos flotantes de fondo -->
+  <div class="petals" aria-hidden="true"></div>
+
+  <!-- ===== PANTALLA DE BIENVENIDA ===== -->
+  <section class="welcome" id="welcome">
+    <div class="welcome__card">
+      <p class="welcome__eyebrow">02 · Meses juntos</p>
+      <h1 class="welcome__title">Para mi Lupita</h1>
+      <div class="welcome__divider"><span></span>❤<span></span></div>
+
+      <p class="welcome__text">
+        Hoy celebramos nuestro <strong>segundo mes</strong> juntos, y quiero invitarte
+        a revivir algunos de nuestros recuerdos.
+      </p>
+      <p class="welcome__text">
+        Casi no tenemos evidencia de este tiempo — pocas fotos para tanto que hemos
+        sentido. Así que esto será casi como un pequeño <em>museo</em>, uno dedicado
+        por completo a lo que más me gusta mirar: <strong>tu belleza</strong>.
+      </p>
+
+      <button class="btn-ver" id="btnVer" type="button">
+        <span>Ver</span>
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+          <path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </div>
+  </section>
+
+  <!-- ===== MUSEO / CARRUSEL ===== -->
+  <section class="museum" id="museum" hidden>
+    <header class="museum__header">
+      <p class="museum__eyebrow">Colección privada</p>
+      <h2 class="museum__title">Museo de tu belleza</h2>
+      <p class="museum__subtitle">Doce piezas · exhibición permanente</p>
+    </header>
+
+    <div class="carousel">
+      <button class="carousel__nav carousel__nav--prev" id="prevBtn" aria-label="Anterior">
+        <svg viewBox="0 0 24 24" width="26" height="26"><path d="M15 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+
+      <div class="carousel__viewport">
+        <div class="carousel__track" id="track"><!-- slides generados por JS --></div>
+      </div>
+
+      <button class="carousel__nav carousel__nav--next" id="nextBtn" aria-label="Siguiente">
+        <svg viewBox="0 0 24 24" width="26" height="26"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+
+    <div class="carousel__dots" id="dots"></div>
+
+    <footer class="museum__footer">
+      <div class="museum__divider"><span></span>❤<span></span></div>
+      <p class="museum__gratitude">
+        Gracias por estos dos meses, Lupita.<br />
+        Fueron pocos días para todo lo que me haces sentir,
+        y aun así los guardo como un tesoro.
+      </p>
+      <p class="museum__wish">Y desde el fondo de mi corazón, espero que sean muchos, muchos más. 🤍</p>
+    </footer>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
