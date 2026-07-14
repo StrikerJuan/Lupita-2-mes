@@ -7,12 +7,12 @@ const CAPTIONS = [
   "Pieza II · Esa mirada",
   "Pieza III · Un instante",
   "Pieza IV · Tú y el mundo",
-  "Pieza V · Luz de tarde",
+  "Pieza V · Luz de mi vida",
   "Pieza VI · Sin palabras",
   "Pieza VII · Contigo",
   "Pieza VIII · Un buen día",
   "Pieza IX · Tu esencia",
-  "Pieza X · Como te recuerdo",
+  "Pieza X · Como te imagino",
   "Pieza XI · Mi favorita",
   "Pieza XII · Y las que faltan",
 ];
@@ -121,9 +121,48 @@ btnVer.addEventListener("click", () => {
   }, 550);
 });
 
+// --- Reproductor de audio minimalista ---
+const audio = document.getElementById("audio");
+const player = document.getElementById("player");
+const playerIcon = document.getElementById("playerIcon");
+const playerProgress = document.getElementById("playerProgress");
+const CIRC = 125.6; // circunferencia del anillo (2·π·20)
+
+const ICON_PLAY = '<svg viewBox="0 0 24 24" width="16" height="16"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>';
+const ICON_PAUSE = '<svg viewBox="0 0 24 24" width="16" height="16"><path d="M7 5h4v14H7zM13 5h4v14h-4z" fill="currentColor"/></svg>';
+
+player.addEventListener("click", () => {
+  if (audio.paused) {
+    audio.play().catch(() => {});
+  } else {
+    audio.pause();
+  }
+});
+
+audio.addEventListener("play", () => {
+  player.classList.add("is-playing");
+  playerIcon.innerHTML = ICON_PAUSE;
+  player.setAttribute("aria-label", "Pausar canción");
+});
+audio.addEventListener("pause", () => {
+  player.classList.remove("is-playing");
+  playerIcon.innerHTML = ICON_PLAY;
+  player.setAttribute("aria-label", "Reproducir canción");
+});
+audio.addEventListener("timeupdate", () => {
+  const pct = audio.duration ? audio.currentTime / audio.duration : 0;
+  playerProgress.style.strokeDashoffset = CIRC * (1 - pct);
+});
+
+// Al entrar al museo, intenta iniciar la canción suavemente
+btnVer.addEventListener("click", () => {
+  audio.volume = 0.4;
+  audio.play().catch(() => {}); // si el navegador lo bloquea, queda el botón
+});
+
 // --- Pétalos flotantes ---
 const petalsWrap = document.querySelector(".petals");
-const PETAL_CHARS = ["❀", "❁", "✿", "❤", "♥"];
+const PETAL_CHARS = ["🐧", "❁", "✿", "❤", "♥"];
 for (let i = 0; i < 14; i++) {
   const p = document.createElement("span");
   p.className = "petal";

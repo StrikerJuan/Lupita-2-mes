@@ -67,13 +67,27 @@
     <footer class="museum__footer">
       <div class="museum__divider"><span></span>❤<span></span></div>
       <p class="museum__gratitude">
-        Gracias por estos dos meses, Lupita.<br />
-        Fueron pocos días para todo lo que me haces sentir,
-        y aun así los guardo como un tesoro.
+        Gracias por estos dos meses, Lupita, mi amor.<br />
       </p>
-      <p class="museum__wish">Y desde el fondo de mi corazón, espero que sean muchos, muchos más. 🤍</p>
+      <p class="museum__wish">Y desde el fondo de mi corazón, espero que sean muchos, muchos más. 🐧🤍</p>
     </footer>
   </section>
+
+  <!-- ===== Reproductor de audio minimalista ===== -->
+  <button class="player" id="player" type="button" aria-label="Reproducir canción" title="Nuestra canción">
+    <svg class="player__ring" viewBox="0 0 44 44" aria-hidden="true">
+      <circle class="player__track-line" cx="22" cy="22" r="20"></circle>
+      <circle class="player__progress" id="playerProgress" cx="22" cy="22" r="20"></circle>
+    </svg>
+    <span class="player__icon" id="playerIcon">
+      <!-- play -->
+      <svg viewBox="0 0 24 24" width="16" height="16"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+    </span>
+  </button>
+  <audio id="audio" preload="none" loop>
+    <source src="audio/cancion.mp3" type="audio/mpeg" />
+    <source src="audio/cancion.ogg" type="audio/ogg" />
+  </audio>
 
   <script src="script.js"></script>
 </body>
